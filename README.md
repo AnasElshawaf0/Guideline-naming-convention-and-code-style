@@ -835,8 +835,3 @@ But the idea is to have different environments target for Development and QA res
 | Debug   |  <p><img src="src/ic_launcher_debug.png"><br> MarvelDEV</p>  | <p><img src="src/ic_launcher_debug.png"><br> MarvelQA</p> | <p><img src="src/ic_launcher_debug.png"><br> Marvel</p> |
 | Release | <p><img src="src/ic_launcher_release.png"><br> MarvelDEV</p> | <p><img src="src/ic_launcher_release.png"><br> MarvelQA</p> | <p><img src="src/ic_launcher_release.png"><br> Marvel</p> |
 
-## Documentation
-
-The documentation is generated following [KDoc](https://kotlinlang.org/docs/reference/kotlin-doc.html) language (the equivalent of Java's [JavaDoc](https://en.wikipedia.org/wiki/Javadoc)) via documentation engine for Kotlin [Dokka](https://github.com/Kotlin/dokka).
-
-To consult it check this [link](https://vmadalin.github.io/android-modular-architecture/) or open the project `/docs` directory.
