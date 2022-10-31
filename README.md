@@ -749,7 +749,8 @@ a large system.
 
   Strict visibility control: Modules enable you to easily control what you expose to other parts
   of your codebase.
-  -Build time : It takes forever and a day to compile and build your project.
+  
+  - Build time : It takes forever and a day to compile and build your project.
  
   -Reusability: You need to share some of your Features among multiple apps.
   
