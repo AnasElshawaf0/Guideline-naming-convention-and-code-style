@@ -456,7 +456,112 @@ component; for example: `SignInActivity`, `SignInFragment`, `ImageUploaderServic
 | `String url`     | `String URL`     |
 | `long id`        | `long ID`        |
 
----------------------------------------------
+
+------------------------------------------------------
+
+XML style rules
+
+### Use self closing tags
+
+When an XML element doesn't have any contents, you __must__ use self closing tags.
+
+This is good:
+
+```xml
+<TextView
+	android:id="@+id/text_view_profile"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content" />
+```
+
+This is __bad__ :
+
+```xml
+<!-- Don\'t do this! -->
+<TextView
+    android:id="@+id/text_view_profile"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+</TextView>
+```
+
+
+### Resources naming
+
+Resource IDs and names are written in __lowercase_underscore__.
+
+#### ID naming
+
+IDs should be prefixed with the name of the element in lowercase underscore. For example:
+
+
+| Element            | Prefix            |
+| -----------------  | ----------------- |
+| `TextView`           | `text_`             |
+| `ImageView`          | `image_`            |
+| `Button`             | `button_`           |
+| `Menu`               | `menu_`             |
+
+Image view example:
+
+```xml
+<ImageView
+    android:id="@+id/image_profile"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+```
+
+Menu example:
+
+```xml
+<menu>
+	<item
+        android:id="@+id/menu_done"
+        android:title="Done" />
+</menu>
+```
+
+#### How to access views
+
+
+| Method             | Elegance | Compile time safety | Build speed impact|
+|--------------------|----------|---------------------|-------------------|
+| `FindViewById`     | `X`      | `X`                 | `√`               | 
+| `DataBinding`      | `√`      | `√`                 | `X`               | 
+| `ButterKnife`      | `√`      | `X`                 | `X`               | 
+| `Kotlin synthetic` | `√`      | `X`                 | `√`               |
+| `View Binding`     | `√`      | `√`                 | `√`               |
+
+
+#### Strings
+
+String names start with a prefix that identifies the section they belong to. For example `registration_email_hint` or `registration_name_hint`. If a string __doesn't belong__ to any section, then you should follow the rules below:
+
+
+| Prefix             | Description                           |
+| -----------------  | --------------------------------------|
+| `error_`             | An error message                      |
+| `msg_`               | A regular information message         |
+| `title_`             | A title, i.e. a dialog title          |
+| `action_`            | An action such as "Save" or "Create"  |
+
+
+#### Styles and Themes
+
+Unlike the rest of resources, style names are written in __UpperCamelCase__.
+
+### Attributes ordering
+
+As a general rule you should try to group similar attributes together. A good way of ordering the most common attributes is:
+
+1. View Id
+2. Style
+3. Layout width and layout height
+4. Other layout attributes, sorted alphabetically
+5. Remaining attributes, sorted alphabetically
+
+
+--------------------------------------------------------------------
 
 ## Code Style
 
@@ -635,25 +740,25 @@ static final String ACTION_OPEN_USER="com.myapp.action.ACTION_OPEN_USER";
 
 ### Modularization
 
-Modularization is a practice of organizing a codebase into loosely coupled and self contained parts. 
-Each part is a module. Each module is independent and serves a clear purpose. By dividing a problem 
-into smaller and easier to solve subproblems, you reduce the complexity of designing and maintaining 
+Modularization is a practice of organizing a codebase into loosely coupled and self contained parts.
+Each part is a module. Each module is independent and serves a clear purpose. By dividing a problem
+into smaller and easier to solve subproblems, you reduce the complexity of designing and maintaining
 a large system.
 
 * Benefits of modularization:
 
   Strict visibility control: Modules enable you to easily control what you expose to other parts
-                             of your codebase.
+  of your codebase.
   Build time : It takes forever and a day to compile and build your project.
   Reusability: You need to share some of your Features among multiple apps.
   Maintenance: There is no Separation of Concern. A big, spaghetti codebase that each Feature has
-               many side effects on the other ones. also, it appears that your colleagues are not 
-               into respecting SOLID principles in action and be willing to open PRs that contain 
-               logic that accesses the world as a whole.
+  many side effects on the other ones. also, it appears that your colleagues are not
+  into respecting SOLID principles in action and be willing to open PRs that contain
+  logic that accesses the world as a whole.
   Test       : You can’t write a simple test scenario for a self-contained Feature, and you need to
-               mock the whole world.
-  Demo Apps  : You are fed up with running the entire project for a slight change, and you have no 
-             idea how to run only a single Feature isolated from the whole app.
+  mock the whole world.
+  Demo Apps  : You are fed up with running the entire project for a slight change, and you have no
+  idea how to run only a single Feature isolated from the whole app.
 
 
 <p align="center">
@@ -725,116 +830,13 @@ The communication between the different layers follow the above diagram using th
 The application has different product flavours: `Dev`, `QA`, `Prod`. Each variant has a specific target environment and to make easier to distinguish them the app uses a specific icon colour for `debug` and `release` build variant with descriptive app name. In this case and given that it's a sample, all variants have the same Marvel API endpoint.
 But the idea is to have different environments target for Development and QA respectively, what doesn't affect the production environment. This is applicable to any tool, platform, service what is being used. For more information about build variant, check this [link](https://developer.android.com/studio/build/build-variants).
 
-| Types   |                         DEV                          |                         QA                          |                       PROD                        |
-|---------|:----------------------------------------------------:|:---------------------------------------------------:|:-------------------------------------------------:|
-| Debug   | <p><img src="src/ic_launcher.png"><br> MarvelDEV</p> | <p><img src="src/ic_launcher.png"><br> MarvelQA</p> | <p><img src="src/ic_launcher.png"><br> Marvel</p> |
-| Release | <p><img src="src/ic_launcher.png"><br> MarvelDEV</p> | <p><img src="src/ic_launcher.png"><br> MarvelQA</p> | <p><img src="src/ic_launcher.png"><br> Marvel</p> |
+| Types   |                             DEV                              |                         QA                          |                       PROD                        |
+|---------|:------------------------------------------------------------:|:---------------------------------------------------:|:-------------------------------------------------:|
+| Debug   |  <p><img src="src/ic_launcher_debug.png"><br> MarvelDEV</p>  | <p><img src="src/ic_launcher_debug.png"><br> MarvelQA</p> | <p><img src="src/ic_launcher_debug.png"><br> Marvel</p> |
+| Release | <p><img src="src/ic_launcher_release.png"><br> MarvelDEV</p> | <p><img src="src/ic_launcher_release.png"><br> MarvelQA</p> | <p><img src="src/ic_launcher_release.png"><br> Marvel</p> |
 
 ## Documentation
 
 The documentation is generated following [KDoc](https://kotlinlang.org/docs/reference/kotlin-doc.html) language (the equivalent of Java's [JavaDoc](https://en.wikipedia.org/wiki/Javadoc)) via documentation engine for Kotlin [Dokka](https://github.com/Kotlin/dokka).
 
 To consult it check this [link](https://vmadalin.github.io/android-modular-architecture/) or open the project `/docs` directory.
-
-------------------------------------------------------
-
-XML style rules
-
-### Use self closing tags
-
-When an XML element doesn't have any contents, you __must__ use self closing tags.
-
-This is good:
-
-```xml
-<TextView
-	android:id="@+id/text_view_profile"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content" />
-```
-
-This is __bad__ :
-
-```xml
-<!-- Don\'t do this! -->
-<TextView
-    android:id="@+id/text_view_profile"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" >
-</TextView>
-```
-
-
-### Resources naming
-
-Resource IDs and names are written in __lowercase_underscore__.
-
-#### ID naming
-
-IDs should be prefixed with the name of the element in lowercase underscore. For example:
-
-
-| Element            | Prefix            |
-| -----------------  | ----------------- |
-| `TextView`           | `text_`             |
-| `ImageView`          | `image_`            |
-| `Button`             | `button_`           |
-| `Menu`               | `menu_`             |
-
-Image view example:
-
-```xml
-<ImageView
-    android:id="@+id/image_profile"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
-```
-
-Menu example:
-
-```xml
-<menu>
-	<item
-        android:id="@+id/menu_done"
-        android:title="Done" />
-</menu>
-```
-
-#### How to access views
-
-
-| Method             | Elegance | Compile time safety | Build speed impact|
-|--------------------|----------|---------------------|-------------------|
-| `FindViewById`     | `X`      | `X`                 | `√`               | 
-| `DataBinding`      | `√`      | `√`                 | `X`               | 
-| `ButterKnife`      | `√`      | `X`                 | `X`               | 
-| `Kotlin synthetic` | `√`      | `X`                 | `√`               |
-| `View Binding`     | `√`      | `√`                 | `√`               |
-
-
-#### Strings
-
-String names start with a prefix that identifies the section they belong to. For example `registration_email_hint` or `registration_name_hint`. If a string __doesn't belong__ to any section, then you should follow the rules below:
-
-
-| Prefix             | Description                           |
-| -----------------  | --------------------------------------|
-| `error_`             | An error message                      |
-| `msg_`               | A regular information message         |
-| `title_`             | A title, i.e. a dialog title          |
-| `action_`            | An action such as "Save" or "Create"  |
-
-
-#### Styles and Themes
-
-Unlike the rest of resources, style names are written in __UpperCamelCase__.
-
-### Attributes ordering
-
-As a general rule you should try to group similar attributes together. A good way of ordering the most common attributes is:
-
-1. View Id
-2. Style
-3. Layout width and layout height
-4. Other layout attributes, sorted alphabetically
-5. Remaining attributes, sorted alphabetically
