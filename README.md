@@ -747,22 +747,22 @@ a large system.
 
 * Benefits of modularization:
 
-  Strict visibility control: Modules enable you to easily control what you expose to other parts
-  of your codebase.
+  - Strict visibility control: Modules enable you to easily control what you expose to other parts
+                             of your codebase.
   
   - Build time : It takes forever and a day to compile and build your project.
  
-  -Reusability: You need to share some of your Features among multiple apps.
+  - Reusability: You need to share some of your Features among multiple apps.
   
-  -Maintenance: There is no Separation of Concern. A big, spaghetti codebase that each Feature has
+  - Maintenance: There is no Separation of Concern. A big, spaghetti codebase that each Feature has
                 many side effects on the other ones. also, it appears that your colleagues are not
                 into respecting SOLID principles in action and be willing to open PRs that contain
                 logic that accesses the world as a whole.
   
-  -Test       : You can’t write a simple test scenario for a self-contained Feature, and you need to
+  - Test       : You can’t write a simple test scenario for a self-contained Feature, and you need to
                 mock the whole world.
 
-  -Demo Apps  : You are fed up with running the entire project for a slight change, and you have no
+  - Demo Apps  : You are fed up with running the entire project for a slight change, and you have no
                 idea how to run only a single Feature isolated from the whole app.
 
 
