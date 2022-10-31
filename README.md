@@ -293,9 +293,10 @@ fun deletePost(id:Int) : Boolean{
 Handles an action. Often used when naming a callback method.
 
 ```js
-link.handleLinkClick() {
+String.handleLinkClick() {
  Timber.i("Clicked a link!")
 }
+link.handleLinkClick()
 ```
 
 #### Prefixes
