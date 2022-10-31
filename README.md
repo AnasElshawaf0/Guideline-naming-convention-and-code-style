@@ -4,7 +4,7 @@
   </a>
 </p>
 
-# Naming Convention
+# Guideline naming convention and code style 
 
 - [Naming convention](#naming-convention)
 - [S-I-D](#s-i-d)
@@ -23,6 +23,24 @@
 - [Strings](#strings)
 - [Constants](#constants)
 - [Acronyms](#acronyms)
+- [XML style rules](#xML-style-rules)
+   - [How to access views](#how-to-access-views)
+   - [Strings](#strings)
+   - [Styles and Themes](#styles-and-themes)
+   - [Attributes ordering](#attributes-ordering)
+- [Code Style](#code-style)
+   - [Order import statements](#order-import-statements)
+   - [Logging guidelines](#logging-guidelines)
+   - [Class member ordering](#Class-member-ordering)
+   - [Parameter ordering in methods](#parameter-ordering-in-methods)
+   - [Modularization](#modularization)
+       - [App module](#app-module)
+       - [Core module](#core-module)
+       - [Features modules](#features-modules)
+       - [Commons modules](#commons-modules)
+       - [Libraries modules](#libraries-modules)
+   - [Architecture components](#architecture-components)
+   - [Build variants](#Build-variants)
 
 ---
 
@@ -428,15 +446,6 @@ component; for example: `SignInActivity`, `SignInFragment`, `ImageUploaderServic
 | Disabled     | `_disabled`     | `btn_order_disabled.9.png`  |
 | Selected     | `_selected`     | `btn_order_selected.9.png`  |
 
-## Strings
-
-| Prefix    | Description                          |
-| --------- | ------------------------------------ |
-| `error_`  | An error message                     |
-| `msg_`    | A regular information message        |
-| `title_`  | A title, i.e. a dialog title         |
-| `action_` | An action such as "Save" or "Create" |
-
 ## Constants
 
 | Element            | Field Name Prefix |
@@ -459,7 +468,7 @@ component; for example: `SignInActivity`, `SignInFragment`, `ImageUploaderServic
 
 ------------------------------------------------------
 
-XML style rules
+# XML style rules
 
 ### Use self closing tags
 
