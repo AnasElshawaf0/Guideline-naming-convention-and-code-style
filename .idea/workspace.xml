@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a5f07b4-9f7d-424c-8da8-ee2fab23fadd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/diagram_communication_layers.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/FUNDING.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/naming-cheatsheet.png" beforeDir="false" />
+    <list default="true" id="4a5f07b4-9f7d-424c-8da8-ee2fab23fadd" name="Changes" comment="edit README.md">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +47,56 @@
       <option name="presentableId" value="Default" />
       <updated>1667144823434</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add code style">
+      <created>1667212004621</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667212004621</updated>
+    </task>
+    <task id="LOCAL-00002" summary="edit README.md">
+      <created>1667212582919</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667212582919</updated>
+    </task>
+    <task id="LOCAL-00003" summary="remove doc from README.md">
+      <created>1667212682630</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667212682630</updated>
+    </task>
+    <task id="LOCAL-00004" summary="edit Benefits of modularization">
+      <created>1667212841431</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667212841431</updated>
+    </task>
+    <task id="LOCAL-00005" summary="edit Benefits of modularization">
+      <created>1667212881537</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667212881537</updated>
+    </task>
+    <task id="LOCAL-00006" summary="edit Benefits of modularization">
+      <created>1667212915963</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1667212915963</updated>
+    </task>
+    <task id="LOCAL-00007" summary="edit README.md">
+      <created>1667213957871</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1667213957871</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -63,5 +109,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add code style" />
+    <MESSAGE value="remove doc from README.md" />
+    <MESSAGE value="edit Benefits of modularization" />
+    <MESSAGE value="edit README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit README.md" />
   </component>
 </project>
