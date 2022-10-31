@@ -4,7 +4,7 @@
   </a>
 </p>
 
-# Guideline naming convention and code style 
+# Guideline naming convention and code style
 
 - [Naming convention](#naming-convention)
 - [S-I-D](#s-i-d)
@@ -24,23 +24,23 @@
 - [Constants](#constants)
 - [Acronyms](#acronyms)
 - [XML style rules](#xML-style-rules)
-   - [How to access views](#how-to-access-views)
-   - [Strings](#strings)
-   - [Styles and Themes](#styles-and-themes)
-   - [Attributes ordering](#attributes-ordering)
+    - [How to access views](#how-to-access-views)
+    - [Strings](#strings)
+    - [Styles and Themes](#styles-and-themes)
+    - [Attributes ordering](#attributes-ordering)
 - [Code Style](#code-style)
-   - [Order import statements](#order-import-statements)
-   - [Logging guidelines](#logging-guidelines)
-   - [Class member ordering](#Class-member-ordering)
-   - [Parameter ordering in methods](#parameter-ordering-in-methods)
-   - [Modularization](#modularization)
-       - [App module](#app-module)
-       - [Core module](#core-module)
-       - [Features modules](#features-modules)
-       - [Commons modules](#commons-modules)
-       - [Libraries modules](#libraries-modules)
-   - [Architecture components](#architecture-components)
-   - [Build variants](#Build-variants)
+    - [Order import statements](#order-import-statements)
+    - [Logging guidelines](#logging-guidelines)
+    - [Class member ordering](#Class-member-ordering)
+    - [Parameter ordering in methods](#parameter-ordering-in-methods)
+    - [Modularization](#modularization)
+        - [App module](#app-module)
+        - [Core module](#core-module)
+        - [Features modules](#features-modules)
+        - [Commons modules](#commons-modules)
+        - [Libraries modules](#libraries-modules)
+    - [Architecture components](#architecture-components)
+    - [Build variants](#Build-variants)
 
 ---
 
@@ -277,7 +277,7 @@ Completely erases something from the Database of existence.
 
 ```js
 fun deletePost(id:Int) : Boolean{
-  return database.get( id ).delete()
+  return database.get(id).delete()
 }
 ```
 
@@ -466,7 +466,6 @@ component; for example: `SignInActivity`, `SignInFragment`, `ImageUploaderServic
 | `String url`     | `String URL`     |
 | `long id`        | `long ID`        |
 
-
 ------------------------------------------------------
 
 # XML style rules
@@ -478,23 +477,18 @@ When an XML element doesn't have any contents, you __must__ use self closing tag
 This is good:
 
 ```xml
-<TextView
-	android:id="@+id/text_view_profile"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content" />
+
+<TextView android:id="@+id/text_view_profile" android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
 ```
 
 This is __bad__ :
 
 ```xml
 <!-- Don\'t do this! -->
-<TextView
-    android:id="@+id/text_view_profile"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" >
-</TextView>
+<TextView android:id="@+id/text_view_profile" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"></TextView>
 ```
-
 
 ### Resources naming
 
@@ -503,7 +497,6 @@ Resource IDs and names are written in __lowercase_underscore__.
 #### ID naming
 
 IDs should be prefixed with the name of the element in lowercase underscore. For example:
-
 
 | Element            | Prefix            |
 | -----------------  | ----------------- |
@@ -515,24 +508,21 @@ IDs should be prefixed with the name of the element in lowercase underscore. For
 Image view example:
 
 ```xml
-<ImageView
-    android:id="@+id/image_profile"
-    android:layout_width="wrap_content"
+
+<ImageView android:id="@+id/image_profile" android:layout_width="wrap_content"
     android:layout_height="wrap_content" />
 ```
 
 Menu example:
 
 ```xml
+
 <menu>
-	<item
-        android:id="@+id/menu_done"
-        android:title="Done" />
+    <item android:id="@+id/menu_done" android:title="Done" />
 </menu>
 ```
 
 #### How to access views
-
 
 | Method             | Elegance | Compile time safety | Build speed impact|
 |--------------------|----------|---------------------|-------------------|
@@ -542,11 +532,11 @@ Menu example:
 | `Kotlin synthetic` | `√`      | `X`                 | `√`               |
 | `View Binding`     | `√`      | `√`                 | `√`               |
 
-
 #### Strings
 
-String names start with a prefix that identifies the section they belong to. For example `registration_email_hint` or `registration_name_hint`. If a string __doesn't belong__ to any section, then you should follow the rules below:
-
+String names start with a prefix that identifies the section they belong to. For
+example `registration_email_hint` or `registration_name_hint`. If a string __doesn't belong__ to any
+section, then you should follow the rules below:
 
 | Prefix             | Description                           |
 | -----------------  | --------------------------------------|
@@ -555,21 +545,20 @@ String names start with a prefix that identifies the section they belong to. For
 | `title_`             | A title, i.e. a dialog title          |
 | `action_`            | An action such as "Save" or "Create"  |
 
-
 #### Styles and Themes
 
 Unlike the rest of resources, style names are written in __UpperCamelCase__.
 
 ### Attributes ordering
 
-As a general rule you should try to group similar attributes together. A good way of ordering the most common attributes is:
+As a general rule you should try to group similar attributes together. A good way of ordering the
+most common attributes is:
 
 1. View Id
 2. Style
 3. Layout width and layout height
 4. Other layout attributes, sorted alphabetically
 5. Remaining attributes, sorted alphabetically
-
 
 --------------------------------------------------------------------
 
@@ -757,38 +746,42 @@ a large system.
 
 * Benefits of modularization:
 
-  - Strict visibility control: Modules enable you to easily control what you expose to other parts
-                             of your codebase.
-  
-  - Build time : It takes forever and a day to compile and build your project.
- 
-  - Reusability: You need to share some of your Features among multiple apps.
-  
-  - Maintenance: There is no Separation of Concern. A big, spaghetti codebase that each Feature has
-                many side effects on the other ones. also, it appears that your colleagues are not
-                into respecting SOLID principles in action and be willing to open PRs that contain
-                logic that accesses the world as a whole.
-  
-  - Test       : You can’t write a simple test scenario for a self-contained Feature, and you need to
-                mock the whole world.
+    - Strict visibility control: Modules enable you to easily control what you expose to other parts
+      of your codebase.
 
-  - Demo Apps  : You are fed up with running the entire project for a slight change, and you have no
-                idea how to run only a single Feature isolated from the whole app.
+    - Build time : It takes forever and a day to compile and build your project.
 
+    - Reusability: You need to share some of your Features among multiple apps.
+
+    - Maintenance: There is no Separation of Concern. A big, spaghetti codebase that each Feature
+      has many side effects on the other ones. also, it appears that your colleagues are not into
+      respecting SOLID principles in action and be willing to open PRs that contain logic that
+      accesses the world as a whole.
+
+    - Test       : You can’t write a simple test scenario for a self-contained Feature, and you need
+      to mock the whole world.
+
+    - Demo Apps  : You are fed up with running the entire project for a slight change, and you have
+      no idea how to run only a single Feature isolated from the whole app.
 
 <p align="center">
  <img src="src/diagram_communication_modules.png">
 </p>
 
 The above graph shows the app modularisation:
--   `:app` depends on `:core` and indirectly depends on `:features` by dynamic-features.
--   `:features` modules depends on `:commons`, `:core`, `:libraries` and `:app`.
--   `:core` and `:commons` only depends for possible utils on `:libraries`.
--   `:libraries` don’t have any dependency.
+
+- `:app` depends on `:core` and indirectly depends on `:features` by dynamic-features.
+- `:features` modules depends on `:commons`, `:core`, `:libraries` and `:app`.
+- `:core` and `:commons` only depends for possible utils on `:libraries`.
+- `:libraries` don’t have any dependency.
 
 #### App module
 
-The `:app` module is an [com.android.application](https://developer.android.com/studio/build/), which is needed to create the app bundle.  It is also responsible for initiating the [dependency graph](https://github.com/google/dagger), [play core](https://developer.android.com/reference/com/google/android/play/core/release-notes) and another project global libraries, differentiating especially between different app environments.
+The `:app` module is an [com.android.application](https://developer.android.com/studio/build/),
+which is needed to create the app bundle. It is also responsible for initiating
+the [dependency graph](https://github.com/google/dagger)
+, [play core](https://developer.android.com/reference/com/google/android/play/core/release-notes)
+and another project global libraries, differentiating especially between different app environments.
 
 <p align="center">
  <img src="src/diagram_dependency_app.png">
@@ -796,7 +789,10 @@ The `:app` module is an [com.android.application](https://developer.android.c
 
 #### Core module
 
-The `:core` module is an [com.android.library](https://developer.android.com/studio/projects/android-library)  for serving network requests or accessing to the database. Providing the data source for the many features that require it.
+The `:core` module is
+an [com.android.library](https://developer.android.com/studio/projects/android-library)  for serving
+network requests or accessing to the database. Providing the data source for the many features that
+require it.
 
 <p align="center">
  <img src="src/diagram_dependency_core.png">
@@ -804,7 +800,10 @@ The `:core` module is an [com.android.library](https://developer.android.com/st
 
 #### Features modules
 
-The `:features` module are an [com.android.dynamic-feature](https://developer.android.com/studio/projects/dynamic-delivery) is essentially a gradle module which can be downloaded independently from the base application module. It can hold code and resources and include dependencies, just like any other gradle module.
+The `:features` module are
+an [com.android.dynamic-feature](https://developer.android.com/studio/projects/dynamic-delivery) is
+essentially a gradle module which can be downloaded independently from the base application module.
+It can hold code and resources and include dependencies, just like any other gradle module.
 
 |                             features                              |
 |:-----------------------------------------------------------------:|
@@ -814,36 +813,54 @@ The `:features` module are an [com.android.dynamic-feature](https://developer.an
 
 #### Commons modules
 
-The `:commons` modules are an [com.android.library](https://developer.android.com/studio/projects/android-library) only contains code and resources which are shared between feature modules. Reusing this way resources, layouts, views, and components in the different features modules, without the need to duplicate code.
+The `:commons` modules are
+an [com.android.library](https://developer.android.com/studio/projects/android-library) only
+contains code and resources which are shared between feature modules. Reusing this way resources,
+layouts, views, and components in the different features modules, without the need to duplicate
+code.
 
 |                       ui                        |                       views                        |
 |:-----------------------------------------------:|:--------------------------------------------------:|
 | <img src="src/diagram_dependency_commons_ui.png"> | <img src="src/diagram_dependency_commons_views.png"> |
 
-
 #### Libraries modules
 
-The `:libraries` modules are an [com.android.library](https://developer.android.com/studio/projects/android-library), basically contains different utilities that can be used by the different modules.
+The `:libraries` modules are
+an [com.android.library](https://developer.android.com/studio/projects/android-library), basically
+contains different utilities that can be used by the different modules.
 
 <p align="center">
  <img src="src/diagram_dependency_libraries_test_utils.png">
 </p>
 
-
 ### Architecture components
 
-Ideally, ViewModels shouldn’t know anything about Android. This improves testability, leak safety and modularity. ViewModels have different scopes than activities or fragments. While a ViewModel is alive and running, an activity can be in any of its lifecycle states. Activities and fragments can be destroyed and created again while the ViewModel is unaware.
+Ideally, ViewModels shouldn’t know anything about Android. This improves testability, leak safety
+and modularity. ViewModels have different scopes than activities or fragments. While a ViewModel is
+alive and running, an activity can be in any of its lifecycle states. Activities and fragments can
+be destroyed and created again while the ViewModel is unaware.
 
-Passing a reference of the View (activity or fragment) to the ViewModel is a serious risk. Lets assume the ViewModel requests data from the network and the data comes back some time later. At that moment, the View reference might be destroyed or might be an old activity that is no longer visible, generating a memory leak and, possibly, a crash.
+Passing a reference of the View (activity or fragment) to the ViewModel is a serious risk. Lets
+assume the ViewModel requests data from the network and the data comes back some time later. At that
+moment, the View reference might be destroyed or might be an old activity that is no longer visible,
+generating a memory leak and, possibly, a crash.
 
 <img src="src/diagram_communication_layers.png">
 
-The communication between the different layers follow the above diagram using the reactive paradigm, observing changes on components without need of callbacks avoiding leaks and edge cases related with them.
+The communication between the different layers follow the above diagram using the reactive paradigm,
+observing changes on components without need of callbacks avoiding leaks and edge cases related with
+them.
 
 ### Build variants
 
-The application has different product flavours: `Dev`, `QA`, `Prod`. Each variant has a specific target environment and to make easier to distinguish them the app uses a specific icon colour for `debug` and `release` build variant with descriptive app name. In this case and given that it's a sample, all variants have the same Marvel API endpoint.
-But the idea is to have different environments target for Development and QA respectively, what doesn't affect the production environment. This is applicable to any tool, platform, service what is being used. For more information about build variant, check this [link](https://developer.android.com/studio/build/build-variants).
+The application has different product flavours: `Dev`, `QA`, `Prod`. Each variant has a specific
+target environment and to make easier to distinguish them the app uses a specific icon colour
+for `debug` and `release` build variant with descriptive app name. In this case and given that it's
+a sample, all variants have the same Marvel API endpoint. But the idea is to have different
+environments target for Development and QA respectively, what doesn't affect the production
+environment. This is applicable to any tool, platform, service what is being used. For more
+information about build variant, check
+this [link](https://developer.android.com/studio/build/build-variants).
 
 | Types   |                             DEV                              |                         QA                          |                       PROD                        |
 |---------|:------------------------------------------------------------:|:---------------------------------------------------:|:-------------------------------------------------:|
