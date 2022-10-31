@@ -1,6 +1,5 @@
 <p align="center">
   <a href="https://github.com/AnasElshawaf0/Naming-Convention">
-    <img src="./naming-convention.jpg" alt="Naming Convention" />
   </a>
 </p>
 
