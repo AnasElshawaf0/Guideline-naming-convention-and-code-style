@@ -54,7 +54,7 @@ There are several techniques you can use to make them more readable:
 Each word, except the first, starts with a capital letter:
 
 used with : methods,variables
-examples-
+
 
 ```js
 myVariableName = "John" , timeToFirstLoad()
