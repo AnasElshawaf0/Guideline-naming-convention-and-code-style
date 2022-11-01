@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4a5f07b4-9f7d-424c-8da8-ee2fab23fadd" name="Changes" comment="edit README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +97,35 @@
       <option name="project" value="LOCAL" />
       <updated>1667213957871</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="edit README.md">
+      <created>1667214113322</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1667214113322</updated>
+    </task>
+    <task id="LOCAL-00009" summary="edit README.md">
+      <created>1667214184233</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1667214184233</updated>
+    </task>
+    <task id="LOCAL-00010" summary="edit README.md">
+      <created>1667214316702</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1667214316702</updated>
+    </task>
+    <task id="LOCAL-00011" summary="edit README.md">
+      <created>1667214357069</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1667214357069</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
