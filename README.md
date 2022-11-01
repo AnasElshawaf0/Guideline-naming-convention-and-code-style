@@ -53,41 +53,11 @@ There are several techniques you can use to make them more readable:
 
 Each word, except the first, starts with a capital letter:
 
-```js
-myVariableName = "John"
-```
-
-### Pascal Case
-
-Each word starts with a capital letter:
+used with : methods,variables
+examples-
 
 ```js
-MyVariableName = "John"
-```
-
-### Snake Case
-
-Each word is separated by an underscore character:
-
-```js
-my_variable_name = "John"
-```
-
-Tips:
-
-* Lower camelCase is used for methods, local variables, and instance variables.
-* Constants should be ALL_CAPS.
-* Don't start variables with o_, obj_, m_ etc. A variable does not need tags which states it is a
-  variable
-
-```js
-/* Bad */
-var primerNombre = 'Gustavo'
-var amigos = ['Kate', 'John']
-
-/* Good */
-var firstName = 'Gustavo'
-var friends = ['Kate', 'John']
+myVariableName = "John" , timeToFirstLoad()
 ```
 
 ```js
@@ -98,10 +68,36 @@ var shouldUpdate = true
 /* Good */
 var pageCount = 5
 var shouldUpdate = true
+```
 
-/* Good as well */
-var page_count = 5
-var should_update = true
+
+### Pascal Case
+
+Each word starts with a capital letter:
+
+used with : classes,interfaces,annotations,enums
+examples-
+
+```js
+RestController,WriteOperation,OutOfMemoryException
+```
+
+### Snake Case
+
+Each word is separated by an underscore character:
+used in declaring constants When lower cased, it is used conventionally in declaring database field names.
+
+```js
+my_variable_name = "John"
+```
+
+### Kebab case 
+
+combines words by replacing each space with a dash (-), as follows:
+
+```js
+ex: git branch name 
+user-login-count
 ```
 
 ### S-I-D
@@ -114,14 +110,14 @@ A name must be _short_, _intuitive_ and _descriptive_:
 
 ```js
 /* Bad */
-const a = 5 // "a" could mean anything
-const isPaginatable = a > 10 // "Paginatable" sounds extremely unnatural
-const shouldPaginatize = a > 10 // Made up verbs are so much fun!
+val a = 5 // "a" could mean anything
+val isPaginatable = a > 10 // "Paginatable" sounds extremely unnatural
+val shouldPaginatize = a > 10 // Made up verbs are so much fun!
 
 /* Good */
-const postCount = 5
-const hasPagination = postCount > 10
-const shouldPaginate = postCount > 10 // alternatively
+val postCount = 5
+val hasPagination = postCount > 10
+val shouldPaginate = postCount > 10 // alternatively
 ```
 
 ### Avoid contractions
@@ -212,11 +208,11 @@ fun getFruitCount(): Int{
 You can use `get` when performing asynchronous operations as well:
 
 ```js
-function fetchBooks(url) {
+fun fetchBooks(url) {
 ...
 }
 // OR
-function getBooksFromAPI(url) {
+fun getBooksFromAPI(url) {
 ...
 }
 ```
@@ -247,7 +243,7 @@ Timber.i(fruits.toString())// 5
 Sets a variable back to its initial value or state.
 
 ```js
-const initialFruits = 5
+val initialFruits = 5
 var fruits = initialFruits
 setFruits(10)
 Timber.i(fruits.toString()) // 10
