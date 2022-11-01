@@ -76,7 +76,6 @@ var shouldUpdate = true
 Each word starts with a capital letter:
 
 used with : classes,interfaces,annotations,enums
-examples-
 
 ```js
 RestController,WriteOperation,OutOfMemoryException
